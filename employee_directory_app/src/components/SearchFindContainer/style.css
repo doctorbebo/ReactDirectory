@@ -1,0 +1,11 @@
+.input-card
+{
+    box-sizing: border-box;
+    display: inline-block;
+}
+.by-2
+{
+    width: 50%;
+    margin: 10px 0px;
+}
+
