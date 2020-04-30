@@ -3,9 +3,11 @@ import SearchFindContainer from '../components/SearchFindContainer'
 import ResultsCard from '../components/ResultsCard'
 import EmployeeCard from '../components/EmployeeCard'
 import Wrapper from '../components/Wrapper'
+import employeeList from "../employees.json";
 
 class Index extends React.Component 
 {
+
     state = {
         search: {
             name: "SearchName",
@@ -18,18 +20,23 @@ class Index extends React.Component
             position: "Position",
             salary: 0,
             id: "Id"
-        }
+        },
+        employees: [],
+        message: ""
+    }
+
+    componentDidMount()
+    {
+        this.setState({"employees": employeeList},()=>
+        {
+            console.log(this.state.employees);
+        });
     }
 
     handleInputChange = (event, type) =>
     {
-        console.log(event.target.name);
-        console.log(event.target.value);
         const {name, value} = event.target;
 
-
-
-        
         if(type === "Search")
         {
             let newState = this.state.search;
@@ -45,14 +52,33 @@ class Index extends React.Component
         }
     }
 
+    addEmployee = (event) =>
+    {
+        if(this.state.add.name === "AddName" && this.state.add.position === "Position" && this.state.add.salary === 0 && this.state.add.id === "Id")
+        {
+            this.setState({"message": "Please fill out all fields before adding employee."}); 
+            setTimeout(() => { this.setState({"message": ""})}, 3000);
+        }
+
+
+        event.preventDefault();
+        let newEmployeeList =  JSON.parse(JSON.stringify(this.state.employees));
+        newEmployeeList.push(this.state.add);
+        this.setState({"employees": newEmployeeList}, () =>
+        {
+            console.log(this.state.employees);
+        });
+
+    }
+
 
 render ()
     {
         return (
             <div>
             <Wrapper>
-                <SearchFindContainer state={this.state} handleInputChange = {this.handleInputChange} />
-                <ResultsCard />
+                <SearchFindContainer state={this.state} handleFormSubmit = {this.addEmployee} handleInputChange = {this.handleInputChange} />
+                <ResultsCard employees = {this.state.employees} searchParams = {this.state.search} message = {this.state.message}/>
                 <EmployeeCard />
             </Wrapper>
         </div>

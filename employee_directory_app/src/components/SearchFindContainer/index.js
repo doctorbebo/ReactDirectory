@@ -10,7 +10,7 @@ function Search (props)
                 <InputCard type={"Search"} state = {props.state.search} handleInputChange = {props.handleInputChange} />
             </div>
             <div className="by-2 input-card">
-                <InputCard type={"Add"} state = {props.state.add} handleInputChange = {props.handleInputChange} />
+                <InputCard type={"Add"} state = {props.state.add} handleInputChange = {props.handleInputChange} handleFormSubmit = {props.handleFormSubmit} />
             </div>
         </div>
     );
