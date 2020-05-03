@@ -40,3 +40,36 @@ span
 {
     padding: 5px;
 }
+
+@media only screen and (max-width: 1000px) {
+
+    .by-2
+    {
+        display: inline-block;
+        width: 46%;
+        margin: 5px 1%;
+        font-size: large;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+
+    .by-2
+    {
+        display: inline-block;
+        width: 98%;
+        margin: 5px 1%;
+        font-size: xx-largeS;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+
+    .by-2
+    {
+        display: inline-block;
+        width: 98%;
+        margin: 5px 1%;
+        font-size: medium;
+    }
+}
