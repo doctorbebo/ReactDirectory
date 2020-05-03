@@ -79,7 +79,6 @@ render ()
             <Wrapper>
                 <SearchFindContainer state={this.state} handleFormSubmit = {this.addEmployee} handleInputChange = {this.handleInputChange} />
                 <ResultsCard employees = {this.state.employees} searchParams = {this.state.search} message = {this.state.message}/>
-                <EmployeeCard />
             </Wrapper>
         </div>
         )
