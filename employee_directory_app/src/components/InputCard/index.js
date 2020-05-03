@@ -12,7 +12,12 @@ return(
                 </div>
                 <div className = "input">
                     <div className="input-text">Position</div>
-                    <input placeholder = {props.state.position} name="position" onChange={(e) => props.handleInputChange(e, props.type)} />
+                    <select id="dropdown" name="position" onChange={(e) => props.handleInputChange(e, props.type)} >
+                        <option>Select One</option>
+                        <option>Select One</option>
+                        <option>Select One</option>
+                        <option>Select One</option>
+                    </select>
                 </div>
                 <div className = "input">
                     <div className="input-text">Salary</div>
@@ -32,3 +37,5 @@ return(
 };
 
 export default Input;
+
+// <input placeholder = {props.state.position} name="position" onChange={(e) => props.handleInputChange(e, props.type)} />

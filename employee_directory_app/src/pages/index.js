@@ -36,6 +36,7 @@ class Index extends React.Component
     handleInputChange = (event, type) =>
     {
         const {name, value} = event.target;
+        console.log(event.target);
 
         if(type === "Search")
         {

@@ -27,6 +27,11 @@ input
     width: 100%;
     font-size: medium;
 }
+select
+{
+    width: 100%;
+    font-size: large;
+}
 
 .input 
 {
