@@ -10,19 +10,19 @@ function Results (props)
     employeeList = props.employees;
 
     let searchParams = JSON.parse(JSON.stringify(props.searchParams));
-    if(searchParams.name === "SearchName")
+    if(searchParams.name === "SearchName" || searchParams.name === "")
     {
         delete searchParams.name;
     }
-    if (searchParams.position === "Select One")
+    if (searchParams.position === "Select One" || searchParams.name === "")
     {
         delete searchParams.position
     }
-    if(searchParams.salary === 0)
+    if(searchParams.salary === 0 || searchParams.name === "")
     {
         delete searchParams.salary;
     }
-    if (searchParams.id === "Id")
+    if (searchParams.id === "Id" || searchParams.name === "")
     {
         delete searchParams.id
     }
@@ -34,14 +34,18 @@ function Results (props)
                 <h2>{props.message}</h2>
                 {employeeList.map(e =>
                 (
-                    <div className = "border">
+                    <div className = "border by-2 m-5 p-5" key={e.id} >
                         <div className = "w-25">
-                            <div>{e.name}</div>   
-                            <div>{e.position}</div>   
+                            <div>Name: </div>
+                            <div>Position: </div>
+                            <div>salary: </div>
+                            <div>ID: </div>
                         </div>
                         <div className = "w-75">
-                            <div>{e.salary}</div>   
-                            <div>{e.id}</div>   
+                            <div className="lm-5">{e.name}</div>     
+                            <div className="lm-5">{e.position}</div>     
+                            <div className="lm-5">{e.salary}</div>     
+                            <div className="lm-5">{e.id}</div>     
                         </div>
                     </div>
                 ))}
