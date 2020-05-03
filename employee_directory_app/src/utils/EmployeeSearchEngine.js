@@ -2,7 +2,7 @@
 module.exports = (employeeList, searchParams) =>
 {
     const searchKeys = Object.keys(searchParams);
-    
+    debugger
     for (let i = 0; i < searchKeys.length; i++) {
         const key = searchKeys[i];
         const searchParam = searchParams[key]; 

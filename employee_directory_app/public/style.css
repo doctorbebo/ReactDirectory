@@ -1,6 +1,22 @@
+body
+{
+    margin: 0;
+}
+
+
 .border
 {
     border: solid black 2px;
+}
+.rounded-border
+{
+    border: solid black 2px;
+    border-radius: 50px;
+}
+
+.bg
+{
+    background-image: url("./assets/background/bg.png");
 }
 
 .m-5 

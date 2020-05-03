@@ -26,20 +26,22 @@ function Results (props)
     {
         delete searchParams.email
     }
+    
     if(Object.keys(searchParams).length !== 0)
     {
+        debugger
         employeeList = employeeSearchEngine(employeeList, searchParams); 
         return (
-            <div className = "border m-5" key>
+            <div className = "m-5 " key>
                 <h2>{props.message}</h2>
                 {employeeList.map((e, index) =>
                 (
-                    <div className = "border by-2 m-5 p-5" key={index} >
+                    <div className = "rounded-border by-2 m-5 padding background-color" key={index} >
                         <div className = "w-25">
                             <div>Name: </div>
                             <div>Position: </div>
-                            <div>salary: </div>
-                            <div>ID: </div>
+                            <div>Salary: </div>
+                            <div>Email: </div>
                         </div>
                         <div className = "w-75">
                             <div className="lm-5">{e.name}</div>     
@@ -54,16 +56,16 @@ function Results (props)
     }
 
     return (
-        <div className = "border m-5">
+        <div className = "m-5">
             <h2 className="text-center">{props.message}</h2>
             {employeeList.map((e, index) =>
             (
-                <div className = "border by-2 m-5 p-5" key={index} >
+                <div className = "rounded-border by-2 m-5 padding background-color" key={index} >
                     <div className = "w-25">
                         <div>Name: </div>
                         <div>Position: </div>
-                        <div>salary: </div>
-                        <div>ID: </div>
+                        <div>Salary: </div>
+                        <div>Email: </div>
                     </div>
                     <div className = "w-75">
                         <div className="lm-5">{e.name}</div>     

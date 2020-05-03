@@ -26,7 +26,7 @@ return(
                 </div>
                 <div className = "input">
                     <div className="input-text">Email</div>
-                    <input placeholder  = {props.state.email} name="id" onChange={(e) => props.handleInputChange(e, props.type)} />
+                    <input placeholder  = {props.state.email} name="email" onChange={(e) => props.handleInputChange(e, props.type)} />
                 </div>
             </form>
         </div>
