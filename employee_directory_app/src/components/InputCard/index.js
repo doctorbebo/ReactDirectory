@@ -4,7 +4,7 @@ import './style.css'
 function Input (props)
 {   
 return(
-    <div>
+        <div>
             <form>
                 <div className = "input">
                     <div className="input-text">Name</div>
@@ -14,9 +14,10 @@ return(
                     <div className="input-text">Position</div>
                     <select id="dropdown" name="position" onChange={(e) => props.handleInputChange(e, props.type)} >
                         <option>Select One</option>
-                        <option>Select One</option>
-                        <option>Select One</option>
-                        <option>Select One</option>
+                        <option>Software Engineer</option>
+                        <option>Team Lead</option>
+                        <option>Web Designer</option>
+                        <option>Product Manager</option>
                     </select>
                 </div>
                 <div className = "input">
@@ -24,13 +25,9 @@ return(
                     <input placeholder = {props.state.salary} name="salary" onChange={(e) => props.handleInputChange(e, props.type)} />
                 </div>
                 <div className = "input">
-                    <div className="input-text">Id</div>
-                    <input placeholder  = {props.state.id} name="id" onChange={(e) => props.handleInputChange(e, props.type)} />
+                    <div className="input-text">Email</div>
+                    <input placeholder  = {props.state.email} name="id" onChange={(e) => props.handleInputChange(e, props.type)} />
                 </div>
-                <div className = "btn-div">
-                <button onClick={(e) => props.handleFormSubmit(e)}>{props.type}</button>
-                </div>
-
             </form>
         </div>
     )

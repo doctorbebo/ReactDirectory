@@ -22,9 +22,9 @@ function Results (props)
     {
         delete searchParams.salary;
     }
-    if (searchParams.id === "Id" || searchParams.name === "")
+    if (searchParams.email === "email" || searchParams.name === "")
     {
-        delete searchParams.id
+        delete searchParams.email
     }
     if(Object.keys(searchParams).length !== 0)
     {
@@ -32,9 +32,9 @@ function Results (props)
         return (
             <div className = "border m-5" key>
                 <h2>{props.message}</h2>
-                {employeeList.map(e =>
+                {employeeList.map((e, index) =>
                 (
-                    <div className = "border by-2 m-5 p-5" key={e.id} >
+                    <div className = "border by-2 m-5 p-5" key={index} >
                         <div className = "w-25">
                             <div>Name: </div>
                             <div>Position: </div>
@@ -45,7 +45,7 @@ function Results (props)
                             <div className="lm-5">{e.name}</div>     
                             <div className="lm-5">{e.position}</div>     
                             <div className="lm-5">{e.salary}</div>     
-                            <div className="lm-5">{e.id}</div>     
+                            <div className="lm-5">{e.email}</div>     
                         </div>
                     </div>
                 ))}
@@ -56,9 +56,9 @@ function Results (props)
     return (
         <div className = "border m-5">
             <h2 className="text-center">{props.message}</h2>
-            {employeeList.map(e =>
+            {employeeList.map((e, index) =>
             (
-                <div className = "border by-2 m-5 p-5" key={e.id} >
+                <div className = "border by-2 m-5 p-5" key={index} >
                     <div className = "w-25">
                         <div>Name: </div>
                         <div>Position: </div>
@@ -69,7 +69,7 @@ function Results (props)
                         <div className="lm-5">{e.name}</div>     
                         <div className="lm-5">{e.position}</div>     
                         <div className="lm-5">{e.salary}</div>     
-                        <div className="lm-5">{e.id}</div>     
+                        <div className="lm-5">{e.email}</div>     
                     </div>
                 </div>
             ))}        

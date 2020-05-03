@@ -12,13 +12,13 @@ class Index extends React.Component
             name: "SearchName",
             position: "Select One",
             salary: 0,
-            id: "Id"
+            email: "email"
         },
         add: {
             name: "AddName",
             position: "Select One",
             salary: 0,
-            id: "Id"
+            email: "email"
         },
         employees: [],
         message: ""
