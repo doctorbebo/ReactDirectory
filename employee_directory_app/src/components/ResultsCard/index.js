@@ -14,7 +14,7 @@ function Results (props)
     {
         delete searchParams.name;
     }
-    if (searchParams.position === "Position")
+    if (searchParams.position === "Select One")
     {
         delete searchParams.position
     }

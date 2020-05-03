@@ -1,7 +1,6 @@
 import React from 'react';
 import SearchFindContainer from '../components/SearchFindContainer'
 import ResultsCard from '../components/ResultsCard'
-import EmployeeCard from '../components/EmployeeCard'
 import Wrapper from '../components/Wrapper'
 import employeeList from "../employees.json";
 
@@ -11,13 +10,13 @@ class Index extends React.Component
     state = {
         search: {
             name: "SearchName",
-            position: "Position",
+            position: "Select One",
             salary: 0,
             id: "Id"
         },
         add: {
             name: "AddName",
-            position: "Position",
+            position: "Select One",
             salary: 0,
             id: "Id"
         },
@@ -27,16 +26,12 @@ class Index extends React.Component
 
     componentDidMount()
     {
-        this.setState({"employees": employeeList},()=>
-        {
-            console.log(this.state.employees);
-        });
+        this.setState({"employees": employeeList});
     }
 
     handleInputChange = (event, type) =>
     {
         const {name, value} = event.target;
-        console.log(event.target);
 
         if(type === "Search")
         {
